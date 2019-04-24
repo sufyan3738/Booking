@@ -18,5 +18,11 @@ class timerange {
         $result = mysqli_query($this->conn, $query);
         return $result;
     }
+
+    function readone(){
+        $query = "SELECT * FROM " . $this->table_name . " WHERE tr_id = " . $this->tr_id;
+        $result = mysqli_query($this->conn, $query);
+        return $result; 
+    }
 }
 ?>

@@ -18,5 +18,11 @@ class Room{
         $result = mysqli_query($this->conn, $query);
         return $result;
     }
+
+    function readone(){
+        $query = "SELECT * FROM " . $this->table_name . " WHERE room_id = " . $this->room_id;
+        $result = mysqli_query($this->conn, $query);
+        return $result;
+    }
 }
 ?>
