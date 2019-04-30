@@ -6,6 +6,7 @@ class Users{
     public $user_id;
     public $username;
     public $password;
+    public $user_type;
 
     public function __construct($db)
     {

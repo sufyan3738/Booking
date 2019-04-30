@@ -2,7 +2,7 @@
 class Room{
 
     private $conn;
-    private $table_name = "room";
+    private $table_name = "classroom";
 
     public $room_id;
     public $room_name;

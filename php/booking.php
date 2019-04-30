@@ -9,6 +9,8 @@
         public $booking_date;
         public $tr_id;
         public $created_date;
+        public $purpose;
+        public $status;
 
         public function __construct($db)
         {
@@ -22,8 +24,8 @@
         }
 
         function create(){
-            $stmt = mysqli_prepare($this->conn, "INSERT INTO " . $this->table_name . " (room_id,user_id,booking_date,tr_id,created_date) VALUE (?,?,?,?,?)");
-            mysqli_stmt_bind_param($stmt, 'sssss', $this->room_id, $this->user_id, $this->booking_date, $this->tr_id, $created_date);
+            $stmt = mysqli_prepare($this->conn, "INSERT INTO " . $this->table_name . " (room_id,user_id,booking_date,tr_id,created_date,purpose) VALUE (?,?,?,?,?,?)");
+            mysqli_stmt_bind_param($stmt, 'ssssss', $this->room_id, $this->user_id, $this->booking_date, $this->tr_id, $this->$created_date, $this->purpose);
 
             if(mysqli_stmt_execute($stmt)) {
                 return true;

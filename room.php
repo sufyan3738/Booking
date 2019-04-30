@@ -25,12 +25,13 @@ $trresult = $tr->readall();
 $booking = new booking($db);
 
 if(isset($_POST['submit'])){
-    $booking->room_id = $_POST['room_id'];
-    $booking->user_id = $_SESSION['user_id'];
-    $booking->booking_date = $_POST['date'];
-    $booking->tr_id = $_POST['timerange'];
-    $booking->created_date = date("Y/m/d H:i:s");
-    
+    echo $booking->room_id = $_POST['room_id'];
+    echo $booking->user_id = $_SESSION['user_id'];
+    echo $booking->booking_date = $_POST['date'];
+    echo $booking->tr_id = $_POST['timerange'];
+    echo $booking->created_date = date("Y/m/d H:i:s");
+    echo $booking->purpose = $_POST['purpose'];
+
     if($booking->create()){
         header("location: history.php");
     }else{
@@ -91,6 +92,7 @@ if(isset($_POST['submit'])){
                         <th>รายละเอียด</th>
                         <th>เลือกวันที่</th>
                         <th>เลือกเวลา</th>
+                        <th>เป้าหมายในการใช้งาน</th>
                         <th>จอง</th>
                     </tr>
                         <?php
@@ -110,6 +112,7 @@ if(isset($_POST['submit'])){
                                         ?>
                                         </select>
                                     </td>
+                                    <td><input type="text" name="purpose" class="form-control" required></td>
                                     <td><button class="btn btn-primary" name="submit">จอง</button></td>
                                 </form>
                             </tr>
